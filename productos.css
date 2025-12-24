@@ -1,0 +1,72 @@
+body {
+    font-family: 'Comic Sans MS', 'Poppins', sans-serif;
+
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+.titulo {
+    color: #ff69b4;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+.productos {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: #fff;
+    width: 250px;
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(255, 105, 180, 0.3);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.card h2 {
+    color: #ff85c1;
+    margin: 10px 0;
+}
+
+.card p {
+    font-size: 0.9em;
+    color: #555;
+}
+
+.precio {
+    display: block;
+    font-size: 1.2em;
+    color: #ff4fa3;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.btn-comprar {
+    background-color: #ffb6d9;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 25px;
+    font-size: 1em;
+    cursor: pointer;
+    color: #fff;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn-comprar:hover {
+    background-color: #ff69b4;
+    transform: scale(1.05);
+}
