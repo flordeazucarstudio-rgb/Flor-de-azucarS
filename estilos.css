@@ -146,6 +146,8 @@ header {
   border-radius: 15px;
   box-shadow: 0 5px 20px rgba(0,0,0,0.2);
   background: #fff;
+   width: 100%;
+  overflow: hidden;
 }
 
 .carrusel {
@@ -538,5 +540,28 @@ img {
     padding: 20px 15px;
   }
 }
+* {
+  box-sizing: border-box;
+}
 
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.banner img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+@media (max-width: 768px) {
+  .banner {
+    height: auto;
+  }
+
+  .banner img {
+    object-fit: cover;
+  }
+}
 
