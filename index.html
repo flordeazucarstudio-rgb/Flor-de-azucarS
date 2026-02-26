@@ -1,47 +1,34 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Flor de Azucar</title>
-  <link rel="icon" href="Imagen1.png" type="image/x-icon">
+  <link rel="icon" href="Imagen1.png">
   <link rel="stylesheet" href="estilos.css">
-  <script src="script.js" defer></script>
-  <meta name="google-site-verification" content="hhtG6zU0gqlshoJnSCOgaVikEam0kt5NsH8cKU-LPBo" />
 </head>
+
 <body>
-  <header>
-    <nav>
-      <ul class="menu">
-        <li><a href="#">Inicio</a></li>
-        <li><a href="#sobre">Sobre Nosotros</a></li>
-        <li><a href="https://wa.me/573043687569">Contacto</a></li>
-        <button id="logout" style="display: none;">Cerrar Sesión</button>
-      </ul>
-    </nav>
-  </header>
+
+<!-- 🌸 BANNER CON BOTONES -->
+<div class="banner">
 
   <div class="carrusel">
-    <div class="imagenes" id="carruselImagenes">
-      <img src="Imagen5.png" alt="Imagen 1">
-      <img src="Imagen6.png" alt="Imagen 2">
-      <img src="Imagen7.png" alt="Imagen 3">
-      
-    </div>
-    <!-- DUPLICADO -->
-
-    <div class="imagenes" id="carruselImagenes">
-      <img src="Imagen5.png" alt="Imagen 1">
-      <img src="Imagen6.png" alt="Imagen 2">
-      <img src="Imagen7.png" alt="Imagen 3">
-      
-    </div>
-    
+    <div class="item"><img src="Imagen5.png" alt="Imagen 1"></div>
+    <div class="item"><img src="Imagen6.png" alt="Imagen 2"></div>
+    <div class="item"><img src="Imagen7.png" alt="Imagen 3"></div>
   </div>
 
+  <div class="botones-banner">
+    <a href="#" class="btn-banner">Inicio</a>
+    <a href="#sobre" class="btn-banner">Sobre Nosotros</a>
+    <a href="https://wa.me/573043687569" class="btn-banner">Contacto</a>
+  </div>
 
-  
-  <section class="panel-noticias">
+</div>
+
+<!-- 🌸 NOVEDADES -->
+<section class="panel-noticias">
   <h2>📢 Novedades</h2>
 
   <div class="noticias-contenedor">
@@ -70,54 +57,46 @@
   </div>
 </section>
 
-
-
+<!-- 🌸 SOBRE NOSOTROS -->
 <section id="sobre" class="sobre-nosotros">
   <h2>🌷 Sobre Nosotros 🌷</h2>
 
   <p>
-    Flor de Azúcar es un emprendimiento artístico y artesanal donde las ideas se transforman en detalles dulces y llenos de personalidad.  
-    Creamos flores eternas, joyería artesanal, pines ilustrados, camisas estampadas y piezas hechas a mano, pensadas para quienes aman lo creativo, lo cute y lo diferente  
-    <br><br>
-    Cada producto nace del amor por el arte, la ilustración y el trabajo manual, combinando colores suaves, diseños originales y una estética floral y delicada 
+    Flor de Azúcar es un emprendimiento artístico y artesanal donde las ideas se transforman en detalles dulces y llenos de personalidad.
+    Creamos flores eternas, joyería artesanal, pines ilustrados y piezas hechas a mano.
   </p>
-  <!-- 🌸 IMAGEN KAWAII -->
+
   <div class="imagen-kawaii">
     <img src="Imagen1.png" alt="Decoración kawaii">
   </div>
 </section>
 
-  
+<!-- 🌸 CATEGORÍAS -->
+<section class="categorias">
+  <div class="cuadro" onclick="location.href='flores&detalles.html'">
+    <img src="Imagen2.png" alt="Flores">
+    <h3>Flores & Detalles Eternos</h3>
+  </div>
 
-  <section class="categorias">
-    <div class="cuadro" onclick="location.href='flores&detalles.html'">
-      <img src="Imagen2.png" alt="Imagen de ropa">
-      <h3>Flores & Detalles Eternos</h3>
-    </div>
-    <div class="cuadro" onclick="location.href='arte&manualidades.html'">
-      <img src="Imagen11.png" alt="Imagen de joyeria">
-      <h3>Arte & Manualidades</h3>
-    </div>
-    <div class="cuadro" onclick="location.href='accesorios&estampados.html'">
-      <img src="Imagen3.png" alt="Imagen de florales">
-      <h3>Accesorios & Estampados</h3>
-    </div>
-  </section>
+  <div class="cuadro" onclick="location.href='arte&manualidades.html'">
+    <img src="Imagen11.png" alt="Arte">
+    <h3>Arte & Manualidades</h3>
+  </div>
 
-  
+  <div class="cuadro" onclick="location.href='accesorios&estampados.html'">
+    <img src="Imagen3.png" alt="Accesorios">
+    <h3>Accesorios & Estampados</h3>
+  </div>
+</section>
+
+<!-- 🌸 FOOTER -->
 <footer>
   <div class="footer-container">
 
     <div class="footer-section social-icons">
-      <a href="https://facebook.com" target="_blank">
-        <img src="Logo_de_Facebook.png" alt="Facebook">
-      </a>
-      <a href="#">
-        <img src="Logo_de_ig.png" alt="Instagram">
-      </a>
-      <a href="https://wa.me/573043687569">
-        <img src="Logo_de_what.png" alt="WhatsApp">
-      </a>
+      <a href="#"><img src="Logo_de_Facebook.png" alt="Facebook"></a>
+      <a href="#"><img src="Logo_de_ig.png" alt="Instagram"></a>
+      <a href="https://wa.me/573043687569"><img src="Logo_de_what.png" alt="WhatsApp"></a>
     </div>
 
     <div class="footer-section contact-info">
@@ -125,16 +104,14 @@
     </div>
 
     <div class="footer-section subscribe-form">
-      <form id="form-suscripcion">
+      <form>
         <input type="email" placeholder="Ingresa tu correo" required>
         <button type="submit">Suscribirse</button>
-      
       </form>
     </div>
 
   </div>
 </footer>
-
 
 </body>
 </html>
