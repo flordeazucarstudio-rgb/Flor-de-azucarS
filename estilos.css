@@ -25,9 +25,7 @@ body::before {
   z-index: -1;
 }
 
-/* ======================
-   BANNER + CARRUSEL
-====================== */
+/* ======================   BANNER + CARRUSEL ====================== */
 
 .banner {
   position: relative;
@@ -70,6 +68,7 @@ body::before {
   transform: translateX(-50%);
   display: flex;
   gap: 20px;
+  z-index: 10;
 }
 
 .btn-banner {
@@ -87,9 +86,7 @@ body::before {
   color: white;
 }
 
-/* ======================
-   NOTICIAS
-====================== */
+/* ======================   NOTICIAS ====================== */
 
 .panel-noticias {
   max-width: 1000px;
@@ -132,9 +129,7 @@ body::before {
   margin-bottom: 10px;
 }
 
-/* ======================
-   SOBRE NOSOTROS
-====================== */
+/* ======================   SOBRE NOSOTROS ====================== */
 
 .sobre-nosotros {
   max-width: 800px;
@@ -156,9 +151,7 @@ body::before {
   border-radius: 20px;
 }
 
-/* ======================
-   CATEGORÍAS
-====================== */
+/* ======================   CATEGORÍAS ====================== */
 
 .categorias {
   display: flex;
@@ -189,9 +182,7 @@ body::before {
   border-radius: 10px;
 }
 
-/* ======================
-   FOOTER
-====================== */
+/* ======================   FOOTER ====================== */
 
 footer {
   background: linear-gradient(135deg, #f8e1f4, #ffd6ea);
@@ -227,4 +218,3 @@ footer {
     gap: 10px;
   }
 }
-
