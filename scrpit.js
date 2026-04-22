@@ -1,53 +1,49 @@
-// JavaScript code to create a simple image carousel
-// HTML structure
-    const carousel = document.querySelector('.carousel');
-    let index = 0;
-    setInterval(() => {
-      carousel.scrollLeft = carousel.clientWidth * index;
-      index = (index + 1) % carousel.children.length;
-    }, 3000);
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('form-suscripcion');
+  const emailInput = document.getElementById('email');
+  const mensaje = document.getElementById('mensaje');
 
-    const carrusel = document.getElementById('carruselImagenes');
-    let carouselIndex = 0;
-  
-    function mostrarImagen(i) {
-      carouselIndex = (i + 4) % 4; // hay 4 imágenes
-      carrusel.style.transition = 'transform 0.5s ease-in-out';
-      carrusel.style.transform = 'translateX(' + (-carouselIndex * 100) + '%)';
-    }
-  
-    function avanzar() {
-      mostrarImagen(index + 1);
-    }
-  
-    function retroceder() {
-      mostrarImagen(index - 1);
+  if (!form || !emailInput || !mensaje) {
+    return;
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const email = emailInput.value.trim();
+    if (!email) {
+      mensaje.textContent = 'Escribe tu correo para suscribirte.';
+      return;
     }
 
-//Formulario de suscripción
+    mensaje.textContent = 'Enviando tu correo con mucho amor...';
 
-document.getElementById("form-suscripcion").addEventListener("submit", function (e) {
-  e.preventDefault();
-  const email = document.getElementById("email").value;
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzV7KdeNCGtBQqD_z9nLwLDTAvZhI3hcqChPlJNlOaq2z78QT5kGP5kqSnsTxjL3z9l/exec';
+    const body = new URLSearchParams({ email });
 
-  // URL de la aplicación web de Google Apps Script
-  const scriptURL = "https://script.google.com/macros/s/AKfycbwTtk7yWosgFvgCXyLKIlPWCYe2lLKGh-SeHWfRdtIhBoak4ogyRVmjH1kBEgR6RV8H/exec";
+    try {
+      const response = await fetch(scriptURL, {
+        method: 'POST',
+        body
+      });
 
-  fetch(scriptURL, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ email: email }),
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      if (data.status === "success") {
-        document.getElementById("mensaje").textContent = "¡Gracias por suscribirte!";
-        document.getElementById("form-suscripcion").reset();
-      } else {
-        document.getElementById("mensaje").textContent = "Error al suscribirse.";
+      const raw = await response.text();
+      let data = null;
+
+      try {
+        data = JSON.parse(raw);
+      } catch {
+        data = { status: response.ok ? 'success' : 'error', raw };
       }
-    })
-    .catch(() => {
-      document.getElementById("mensaje").textContent = "Error al suscribirse.";
-    });
+
+      if (response.ok && data.status === 'success') {
+        mensaje.textContent = 'Gracias por suscribirte. Tu correo fue guardado correctamente.';
+        form.reset();
+      } else {
+        mensaje.textContent = 'No pude guardar tu correo. Revisa la publicación del Apps Script.';
+      }
+    } catch (error) {
+      mensaje.textContent = 'No pude conectar el formulario. Revisa que tu Apps Script esté publicado para cualquier persona.';
+    }
+  });
 });
